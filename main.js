@@ -8,8 +8,13 @@ async function main() {
   const { instance } = await WebAssembly.instantiate(buffer);
   const { exports: e } = instance;
 
-  console.log("func_01's result:", e.func_01_const());
-  console.log("func_02_params's result:", e.func_02_params(6,5));
+  console.log("func_0's result:", e.func_0_const());
+  console.log("func_1_params's result:", e.func_1_params(6, 5));
+  console.log("func_2_named's result:", e.func_2_named(6, 5));
+  console.log("func_3_folded's result:", e.func_3_folded(6, 5));
+  console.log("func_4_nested's result:", e.func_4_nested(6, 5));
+  console.log("func_5_locals's result:", e.func_5_locals(6, 5));
+
 }
 console.clear();
 main().catch(e => {
